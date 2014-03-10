@@ -37,6 +37,6 @@ class CertifiedProgramUsersController < ApplicationController
 		@certificateprogramusers=CertifiedProgramUser.find(params[:id])
 	end
 	def show_details
-		@certificateprogramusers=CertifiedProgramUser.order('created_at DESC').all.paginate(page: params[:page])
+		@certificateprogramusers=CertifiedProgramUser.order('created_at DESC').all.paginate(page: params[:page], per_page: 200)
 	end
 end
